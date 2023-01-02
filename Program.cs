@@ -1,4 +1,4 @@
-﻿/*Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.*/
+/*Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.*/
 
 int inputNumber(string str)
 {
@@ -24,15 +24,16 @@ int n = inputNumber("Введите значение n");
 int[,] arr = new int[m, n];
 FillArrayWithRandomNumbers(arr);
 
-for (int i = 0; i < arr.GetLength(0); i++)
+
+for (int i = 0; i < n; i++)
 {
-    double value = 0;
-    for (int j = 0; j < arr.GetLength(1); j++)
+    int srAr = 0;
+    for (int t = 0; t < m; t++)
     {
-        value += arr[i, j];
+        srAr += arr[t, i];
+        
     }
-    value /= n;
-    System.Console.WriteLine("среднее арифметическое: "+ value+ ";");
+    Console.WriteLine($"Cреднее арифметическое элементов столбца {i + 1} = {(float)srAr / m}");
 }
 
 void FillArrayWithRandomNumbers(int[,] arr)
